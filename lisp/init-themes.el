@@ -4,10 +4,11 @@
 
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'gruvbox-theme)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
-
+;; (setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(setq-default custom-enabled-themes '(gruvbox-dark-soft))
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
   "Forcibly load the themes listed in `custom-enabled-themes'."
@@ -22,18 +23,29 @@
 ;;------------------------------------------------------------------------------
 ;; Toggle between light and dark
 ;;------------------------------------------------------------------------------
-(defun light ()
+(defun tomorrow-light ()
   "Activate a light color theme."
   (interactive)
   (setq custom-enabled-themes '(sanityinc-tomorrow-day))
   (reapply-themes))
 
-(defun dark ()
+(defun tomorrow-dark ()
   "Activate a dark color theme."
   (interactive)
   (setq custom-enabled-themes '(sanityinc-tomorrow-bright))
   (reapply-themes))
 
+(defun light ()
+  "Activate a light color theme."
+  (interactive)
+  (setq custom-enabled-themes '(gruvbox-light-hard))
+  (reapply-themes))
+
+(defun dark ()
+  "Activate a dark color theme."
+  (interactive)
+  (setq custom-enabled-themes '(gruvbox-dark-soft))
+  (reapply-themes))
 
 (when (maybe-require-package 'dimmer)
   (setq-default dimmer-fraction 0.15)
