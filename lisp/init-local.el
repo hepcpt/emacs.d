@@ -5,7 +5,7 @@
 ;;; Code:
 (require 'init-gap)
 (require 'init-openwith)
-;;;(require 'init-auctex)
+(require 'init-auctex)
 (require 'init-org-ref)
 ;;(global-hl-line-mode)
 (require 'init-reftex)
